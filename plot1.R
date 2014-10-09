@@ -6,6 +6,6 @@ hData <- read.table("G:\\Data Science\\Exdata\\household_power_consumption.txt",
                     sep=";")
 hData <- mutate(hData,DateTime=paste(Date,Time));
 
-hData <- mutate(hData,DateTime=as.Date(DateTime,"%d/%m/%y"))
+hData <- mutate(hData,Date=as.Date(Date,"%d/%m/%Y"))
 
-hDate <- filter(hData, DateTime >='2007-02-01',DateTime <= '2007-02-02' )
+hDate <- filter(hData, Date =='2020-12-16')
