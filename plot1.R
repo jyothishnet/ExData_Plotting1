@@ -1,5 +1,6 @@
 
 library(dplyr);
+library(grDevices);
 ## Read the file and apply filter on Date
 
 hData <- read.table("G:\\Data Science\\Exdata\\household_power_consumption.txt",header=T,
@@ -14,5 +15,9 @@ hDate <- hDate[complete.cases(hDate),]
 
 rm(hData);
 
+## Create PNG File
+png(filename = "plot1.png",
+    width = 480, height = 480, units = "px",  bg = "white");
 hist(as.numeric(hDate$Global_active_power),breaks=15,col="red",
-     xlab="Global Active Power (killowatts)",ylab="Frequency",main="Global Active Power")
+     xlab="Global Active Power (killowatts)",ylab="Frequency",main="Global Active Power");
+dev.off();
