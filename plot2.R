@@ -12,8 +12,11 @@ hData <- mutate(hData,DateTime=as.POSIXct(hData$DateTime,format="%Y-%m-%d %H:%M:
 hDate <- filter(hData, as.Date(DateTime) >='2007-02-01', as.Date(DateTime) <= '2007-02-02');
 hDate <- hDate[complete.cases(hDate),]
 
-#rm(hData);
+rm(hData);
 
-plot(hDate$DateTime,as.numeric(hDate$Global_active_power),type="b")
 
-title(xlab="",ylab="Global Active Power (killowatts)")
+## Create PNG File
+png(filename = "plot2.png",
+    width = 480, height = 480, units = "px",  bg = "white");
+plot(hDate$DateTime,as.numeric(hDate$Global_active_power),type="b",xlab=NA,ylab="Global Active Power (killowatts)");
+dev.off();
