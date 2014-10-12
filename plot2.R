@@ -18,5 +18,5 @@ rm(hData);
 ## Create PNG File
 png(filename = "plot2.png",
     width = 480, height = 480, units = "px",  bg = "white");
-plot(hDate$DateTime,as.numeric(hDate$Global_active_power),type="b",xlab=NA,ylab="Global Active Power (killowatts)");
+plot(hDate$DateTime,as.numeric(hDate$Global_active_power),type="l",xlab=NA,ylab="Global Active Power (killowatts)");
 dev.off();
